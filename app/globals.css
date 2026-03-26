@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+}
+
+:root {
+  --background: #1A1A1A;
+  /* Primary Dark */
+  --foreground: #F5F5F3;
+  /* Light Text */
+
+  --card: #2F2F2F;
+  /* Soft Dark for cards */
+  --card-foreground: #F5F5F3;
+
+  --popover: #2F2F2F;
+  --popover-foreground: #F5F5F3;
+
+  --primary: #FFFFFF;
+  /* White for primary actions to stand out on dark */
+  --primary-foreground: #1A1A1A;
+  /* Dark text on white buttons */
+  --primary-soft: #DADADA;
+
+  --secondary: #2F2F2F;
+  --secondary-foreground: #F5F5F3;
+
+  --muted: #2F2F2F;
+  --muted-foreground: #DADADA;
+
+  --accent: #2F2F2F;
+  --accent-foreground: #F5F5F3;
+
+  --destructive: #7f1d1d;
+  --destructive-foreground: #F5F5F3;
+
+  --border: #2F2F2F;
+  --input: #2F2F2F;
+  --ring: #F5F5F3;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Inherit :root or define specifically if needed, but :root is now the default "Dark" */
+  --background: #F5F5F3;
+  /* Main Background (Soft Off-White) */
+  --foreground: #1A1A1A;
+  /* Primary Text (Dark) */
+
+  --card: #FFFFFF;
+  /* Pure White */
+  --card-foreground: #1A1A1A;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+
+  --primary: #1A1A1A;
+  /* Primary Dark (Main Brand) */
+  --primary-foreground: #FFFFFF;
+  --primary-soft: #2F2F2F;
+  /* Primary Soft Dark */
+
+  --secondary: #FFFFFF;
+  /* Secondary Button Background */
+  --secondary-foreground: #1A1A1A;
+
+  --muted: #F5F5F3;
+  --muted-foreground: #5A5A5A;
+  /* Secondary Text (Grey) */
+
+  --accent: #F5F5F3;
+  --accent-foreground: #1A1A1A;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #DADADA;
+  /* Light Neutral Grey */
+  --input: #DADADA;
+  /* Input Border */
+  --ring: #1A1A1A;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
